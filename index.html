@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="canonical" href="https://obophenotype.github.io/asctb/">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>ASCT-B Tables</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Index";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/asctb/";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SYBSJVZ23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2SYBSJVZ23');
+  </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> ASCT-B Tables</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Index</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mixins">Mixins</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slots">Slots</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enums">Enums</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#subsets">Subsets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types">Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#built-in">Built in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#defined">Defined</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">ASCT-B Tables</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Index</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/obophenotype/asctb/edit/master/docs/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="asctb-schema">asctb schema</h1>
+<p>asctb</p>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="VesselClass/">VesselClass</a></li>
+</ul>
+<h3 id="mixins">Mixins</h3>
+<h3 id="slots">Slots</h3>
+<ul>
+<li><a href="Anastomoses/">Anastomoses</a> - Indicates whether the vessel anastomoses with another vessel.</li>
+<li><a href="Biomarkers/">Biomarkers</a> - A biomarker associated with the vessel.</li>
+<li><a href="BiomarkersID/">BiomarkersID</a> - The ID of the biomarker in HUGO Gene Nomenclature Committee (HGNC)</li>
+<li><a href="BiomarkersLabel/">BiomarkersLabel</a> - The preferred name of the biomarker in HUGO Gene Nomenclature Committee (HGNC)</li>
+<li><a href="BodyPart/">BodyPart</a> - A mapping from vessel to organ or part of the body.</li>
+<li><a href="BodyPartUberon/">BodyPartUberon</a> - The UBERON ID of the BodyPart.</li>
+<li><a href="BranchSequence/">BranchSequence</a> - The order in which vessels branch off of the BranchesFrom vessel. Vessels can have the same value if they branch off the BranchesFrom vessel at the same place. A value of 999 means the branching sequence will be added in a future version of this table.</li>
+<li><a href="BranchesFrom/">BranchesFrom</a> - The 'parent' vessel that is one step closer to the heart. For veins it is 'drains to' rather than branches from.</li>
+<li><a href="CellType/">CellType</a> - A type of cell associated with the vessel.</li>
+<li><a href="CellTypeID/">CellTypeID</a> - The cell type ID in Cell Ontology.</li>
+<li><a href="CellTypeLabel/">CellTypeLabel</a> - The preferred name of the cell in Cell Ontology.</li>
+<li><a href="CoordX/">CoordX</a> - The X coordinate for the approximate location of selected vessels. This is more to show relative position (left vs right) rather than the exact location.</li>
+<li><a href="CoordY/">CoordY</a> - The Y coordinate for the approximate location of selected vessels. This is more to show relative position (above vs below) rather than the exact location.</li>
+<li><a href="FMA/">FMA</a> - The ID of the vessel in the FMA ontology.</li>
+<li><a href="FMALabel/">FMALabel</a> - The preferred name of the vessel in FMA.</li>
+<li><a href="ForBranchesSee/">ForBranchesSee</a> - For some vessels, like the left and right renal arteries, rather than showing all the branches of both arteries, a "virtual" merged vessel is created (e.g., just "renal artery"). The branches are only added once to that virtual vessel. This field indicates the name of the virtual vessel that has the branches.</li>
+<li><a href="MergedVessel/">MergedVessel</a> - This field contains a "1" if it is virtual merged vessel used to show the branches of other vessels.</li>
+<li><a href="PathFromHeart/">PathFromHeart</a> - The list of branches leading from a heart chamber to the vessel.</li>
+<li><a href="Reference/">Reference</a> - A reference for the website. For example, if the ReferenceURL is a journal article, then this field is the reference (authors, title, journal, etc.) of the article.</li>
+<li><a href="ReferenceDOI/">ReferenceDOI</a> - The DOI of the reference if applicable.</li>
+<li><a href="ReferenceURL/">ReferenceURL</a> - The website describing the vessel and where it branches from.</li>
+<li><a href="Sex/">Sex</a> - Indicates whether the vessel is only found in males or females.</li>
+<li><a href="UBERON/">UBERON</a> - The ID of the vessel in the UBERON ontology.</li>
+<li><a href="UBERONLabel/">UBERONLabel</a> - The preferred name of the vessel in UBERON.</li>
+<li><a href="Vessel/">Vessel</a> - The name of the blood vessel. The unique item (primary key) in this table.</li>
+<li><a href="VesselType/">VesselType</a> - Either heart chamber, artery, arteriole, capillary, venule, vein, sinusoid, or sinus.</li>
+</ul>
+<h3 id="enums">Enums</h3>
+<ul>
+<li><a href="CellTypeLabel_enum/">CellTypeLabel_enum</a></li>
+<li><a href="CellType_enum/">CellType_enum</a></li>
+<li><a href="IsVirtualMergedVessel/">IsVirtualMergedVessel</a></li>
+<li><a href="Sex_enum/">Sex_enum</a></li>
+<li><a href="VesselType_enum/">VesselType_enum</a></li>
+</ul>
+<h3 id="subsets">Subsets</h3>
+<h3 id="types">Types</h3>
+<h4 id="built-in">Built in</h4>
+<ul>
+<li><strong>Bool</strong></li>
+<li><strong>Decimal</strong></li>
+<li><strong>ElementIdentifier</strong></li>
+<li><strong>NCName</strong></li>
+<li><strong>NodeIdentifier</strong></li>
+<li><strong>URI</strong></li>
+<li><strong>URIorCURIE</strong></li>
+<li><strong>XSDDate</strong></li>
+<li><strong>XSDDateTime</strong></li>
+<li><strong>XSDTime</strong></li>
+<li><strong>float</strong></li>
+<li><strong>int</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined</h4>
+<ul>
+<li><a href="types/AnatomicalLabel/">AnatomicalLabel</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/CLIdentifier/">CLIdentifier</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/CellTypeLabel/">CellTypeLabel</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/CoordinateType/">CoordinateType</a>  (<a href="types/Integer/">Integer</a>) </li>
+<li><a href="types/DOI/">DOI</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/FMAIdentifier/">FMAIdentifier</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/HGNCIdentifier/">HGNCIdentifier</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/UBERONIdentifier/">UBERONIdentifier</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/Boolean/">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
+<li><a href="types/Date/">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
+<li><a href="types/Datetime/">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
+<li><a href="types/Decimal/">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
+<li><a href="types/Double/">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
+<li><a href="types/Float/">Float</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:float specification</li>
+<li><a href="types/Identifier/">Identifier</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/Integer/">Integer</a>  (<strong>int</strong>)  - An integer</li>
+<li><a href="types/Ncname/">Ncname</a>  (<strong>NCName</strong>)  - Prefix part of CURIE</li>
+<li><a href="types/Nodeidentifier/">Nodeidentifier</a>  (<strong>NodeIdentifier</strong>)  - A URI, CURIE or BNODE that represents a node in a model.</li>
+<li><a href="types/Objectidentifier/">Objectidentifier</a>  (<strong>ElementIdentifier</strong>)  - A URI or CURIE that represents an object in the model.</li>
+<li><a href="types/String/">String</a>  (<strong>str</strong>)  - A character string</li>
+<li><a href="types/Time/">Time</a>  (<strong>XSDTime</strong>)  - A time object represents a (local) time of day, independent of any particular day</li>
+<li><a href="types/Uri/">Uri</a>  (<strong>URI</strong>)  - a complete URI</li>
+<li><a href="types/Uriorcurie/">Uriorcurie</a>  (<strong>URIorCURIE</strong>)  - a URI or a CURIE</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/obophenotype/asctb/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.2.3
+Build Date UTC : 2021-12-15 21:03:28.014331+00:00
+-->
