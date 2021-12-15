@@ -1,0 +1,31 @@
+
+
+CREATE TABLE "VesselClass" (
+	"BranchesFrom" TEXT, 
+	"Vessel" TEXT NOT NULL, 
+	"VesselType" VARCHAR(13), 
+	"BodyPart" TEXT, 
+	"Sex" VARCHAR(6), 
+	"Anastomoses" TEXT, 
+	"ForBranchesSee" TEXT, 
+	"MergedVessel" VARCHAR(1), 
+	"CoordX" INTEGER, 
+	"CoordY" INTEGER, 
+	"BranchSequence" INTEGER, 
+	"CellType" VARCHAR(29), 
+	"CellTypeLabel" VARCHAR(29), 
+	"CellTypeID" TEXT, 
+	"Biomarkers" TEXT, 
+	"BiomarkersLabel" TEXT, 
+	"BiomarkersID" TEXT, 
+	"ReferenceURL" TEXT, 
+	"Reference" TEXT, 
+	"ReferenceDOI" TEXT, 
+	"UBERON" TEXT, 
+	"FMA" TEXT, 
+	"BodyPartUberon" TEXT, 
+	"UBERONLabel" TEXT, 
+	"FMALabel" TEXT, 
+	"PathFromHeart" TEXT, 
+	PRIMARY KEY ("Vessel")
+);

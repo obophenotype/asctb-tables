@@ -1,0 +1,119 @@
+@prefix ns1: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/asctbVesselClass> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "A mapping from vessel to organ or part of the body." ;
+            ns1:maxCount 1 ;
+            ns1:order 3 ;
+            ns1:path <http://purl.obolibrary.org/obo/BFO_0000050> ],
+        [ ns1:description "Indicates whether the vessel anastomoses with another vessel." ;
+            ns1:maxCount 1 ;
+            ns1:order 5 ;
+            ns1:path <http://purl.obolibrary.org/obo/RO_0002378> ],
+        [ ns1:description "The X coordinate for the approximate location of selected vessels. This is more to show relative position (left vs right) rather than the exact location." ;
+            ns1:maxCount 1 ;
+            ns1:order 8 ;
+            ns1:path <https://w3id.org/asctbCoordX> ],
+        [ ns1:description "The UBERON ID of the BodyPart." ;
+            ns1:maxCount 1 ;
+            ns1:order 22 ;
+            ns1:path <https://w3id.org/asctbBodyPartUberon> ],
+        [ ns1:description "The Y coordinate for the approximate location of selected vessels. This is more to show relative position (above vs below) rather than the exact location." ;
+            ns1:maxCount 1 ;
+            ns1:order 9 ;
+            ns1:path <https://w3id.org/asctbCoordY> ],
+        [ ns1:description "The ID of the biomarker in HUGO Gene Nomenclature Committee (HGNC)" ;
+            ns1:maxCount 1 ;
+            ns1:order 16 ;
+            ns1:path <https://w3id.org/asctbBiomarkersID> ],
+        [ ns1:description "The ID of the vessel in the UBERON ontology." ;
+            ns1:maxCount 1 ;
+            ns1:order 20 ;
+            ns1:path <https://w3id.org/asctbUBERON> ],
+        [ ns1:description "The cell type ID in Cell Ontology." ;
+            ns1:maxCount 1 ;
+            ns1:order 13 ;
+            ns1:path <https://w3id.org/asctbCellTypeID> ],
+        [ ns1:description "Either heart chamber, artery, arteriole, capillary, venule, vein, sinusoid, or sinus." ;
+            ns1:in ( <http://purl.obolibrary.org/obo/UBERON_0001980> <http://purl.obolibrary.org/obo/UBERON_0001637> <http://purl.obolibrary.org/obo/UBERON_0001982> <http://purl.obolibrary.org/obo/UBERON_0000948> "sinus" <http://purl.obolibrary.org/obo/UBERON_0003909> <http://purl.obolibrary.org/obo/UBERON_0001638> <http://purl.obolibrary.org/obo/UBERON_0001979> ) ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdfs:subClassOf ],
+        [ ns1:description "The list of branches leading from a heart chamber to the vessel." ;
+            ns1:maxCount 1 ;
+            ns1:order 25 ;
+            ns1:path <https://w3id.org/asctbPathFromHeart> ],
+        [ ns1:description "The order in which vessels branch off of the BranchesFrom vessel. Vessels can have the same value if they branch off the BranchesFrom vessel at the same place. A value of 999 means the branching sequence will be added in a future version of this table." ;
+            ns1:maxCount 1 ;
+            ns1:order 10 ;
+            ns1:path <https://w3id.org/asctbBranchSequence> ],
+        [ ns1:description "Indicates whether the vessel is only found in males or females." ;
+            ns1:in ( <http://purl.obolibrary.org/obo/UBERON_0003100> <http://purl.obolibrary.org/obo/UBERON_0003101> ) ;
+            ns1:maxCount 1 ;
+            ns1:order 4 ;
+            ns1:path <http://schema.org/gender> ],
+        [ ns1:description "The preferred name of the biomarker in HUGO Gene Nomenclature Committee (HGNC)" ;
+            ns1:maxCount 1 ;
+            ns1:order 15 ;
+            ns1:path <https://w3id.org/asctbBiomarkersLabel> ],
+        [ ns1:description "The website describing the vessel and where it branches from." ;
+            ns1:maxCount 1 ;
+            ns1:order 17 ;
+            ns1:path <https://w3id.org/asctbReferenceURL> ],
+        [ ns1:description "A reference for the website. For example, if the ReferenceURL is a journal article, then this field is the reference (authors, title, journal, etc.) of the article." ;
+            ns1:maxCount 1 ;
+            ns1:order 18 ;
+            ns1:path <https://w3id.org/asctbReference> ],
+        [ ns1:description "This field contains a \"1\" if it is virtual merged vessel used to show the branches of other vessels." ;
+            ns1:in ( "0" "1" ) ;
+            ns1:maxCount 1 ;
+            ns1:order 7 ;
+            ns1:path <https://w3id.org/asctbMergedVessel> ],
+        [ ns1:description "The preferred name of the vessel in FMA." ;
+            ns1:maxCount 1 ;
+            ns1:order 24 ;
+            ns1:path <https://w3id.org/asctbFMALabel> ],
+        [ ns1:description "The preferred name of the cell in Cell Ontology." ;
+            ns1:in ( <http://purl.obolibrary.org/obo/CL_0000071> <http://purl.obolibrary.org/obo/CL_0010008> ) ;
+            ns1:maxCount 1 ;
+            ns1:order 12 ;
+            ns1:path <https://w3id.org/asctbCellTypeLabel> ],
+        [ ns1:description "The ID of the vessel in the FMA ontology." ;
+            ns1:maxCount 1 ;
+            ns1:order 21 ;
+            ns1:path <https://w3id.org/asctbFMA> ],
+        [ ns1:description "For some vessels, like the left and right renal arteries, rather than showing all the branches of both arteries, a \"virtual\" merged vessel is created (e.g., just \"renal artery\"). The branches are only added once to that virtual vessel. This field indicates the name of the virtual vessel that has the branches." ;
+            ns1:maxCount 1 ;
+            ns1:order 6 ;
+            ns1:path <https://w3id.org/asctbForBranchesSee> ],
+        [ ns1:description "The 'parent' vessel that is one step closer to the heart. For veins it is 'drains to' rather than branches from." ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <https://w3id.org/asctbBranchesFrom> ],
+        [ ns1:description "The preferred name of the vessel in UBERON." ;
+            ns1:maxCount 1 ;
+            ns1:order 23 ;
+            ns1:path <https://w3id.org/asctbUBERONLabel> ],
+        [ ns1:description "The DOI of the reference if applicable." ;
+            ns1:maxCount 1 ;
+            ns1:order 19 ;
+            ns1:path <https://w3id.org/asctbReferenceDOI> ],
+        [ ns1:description "The name of the blood vessel. The unique item (primary key) in this table." ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <http://schema.org/identifier> ],
+        [ ns1:description "A biomarker associated with the vessel." ;
+            ns1:maxCount 1 ;
+            ns1:order 14 ;
+            ns1:path <https://w3id.org/asctbBiomarkers> ],
+        [ ns1:description "A type of cell associated with the vessel." ;
+            ns1:in ( <http://purl.obolibrary.org/obo/CL_0000071> <http://purl.obolibrary.org/obo/CL_0010008> ) ;
+            ns1:maxCount 1 ;
+            ns1:order 11 ;
+            ns1:path <https://w3id.org/asctbCellType> ] ;
+    ns1:targetClass <https://w3id.org/asctbVesselClass> .
+

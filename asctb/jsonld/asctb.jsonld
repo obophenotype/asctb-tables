@@ -1,0 +1,956 @@
+{
+  "name": "asctb",
+  "description": "asctb",
+  "id": "https://w3id.org/asctb",
+  "imports": [
+    "linkml:types"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "asctb",
+      "prefix_reference": "https://w3id.org/asctb"
+    },
+    {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    },
+    {
+      "prefix_prefix": "CL",
+      "prefix_reference": "http://purl.obolibrary.org/obo/CL_"
+    },
+    {
+      "prefix_prefix": "UBERON",
+      "prefix_reference": "http://purl.obolibrary.org/obo/UBERON_"
+    }
+  ],
+  "default_curi_maps": [
+    "semweb_context",
+    "obo_context"
+  ],
+  "default_prefix": "asctb",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "CL_identifier",
+      "definition_uri": "https://w3id.org/asctbCLIdentifier",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "HGNC_identifier",
+      "definition_uri": "https://w3id.org/asctbHGNCIdentifier",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "identifier",
+      "definition_uri": "https://w3id.org/asctbIdentifier",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "UBERON_identifier",
+      "definition_uri": "https://w3id.org/asctbUBERONIdentifier",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "FMA_identifier",
+      "definition_uri": "https://w3id.org/asctbFMAIdentifier",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "DOI",
+      "definition_uri": "https://w3id.org/asctbDOI",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "Anatomical_label",
+      "definition_uri": "https://w3id.org/asctbAnatomicalLabel",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "Cell_type_label",
+      "definition_uri": "https://w3id.org/asctbCellTypeLabel",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "CoordinateType",
+      "definition_uri": "https://w3id.org/asctbCoordinateType",
+      "from_schema": "https://w3id.org/asctb",
+      "typeof": "integer",
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "description": "a complete URI",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "comments": [
+        "Used for inheritence and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "CellTypeLabel_enum",
+      "definition_uri": "https://w3id.org/asctbCellTypeLabelEnum",
+      "from_schema": "https://w3id.org/asctb",
+      "permissible_values": [
+        {
+          "text": "blood vessel endothelial cell",
+          "description": "blood vessel endothelial cell",
+          "meaning": "CL:0000071"
+        },
+        {
+          "text": "cardiac endothelial cell",
+          "description": "cardiac endothelial cell",
+          "meaning": "CL:0010008"
+        }
+      ]
+    },
+    {
+      "name": "CellType_enum",
+      "definition_uri": "https://w3id.org/asctbCellTypeEnum",
+      "from_schema": "https://w3id.org/asctb",
+      "permissible_values": [
+        {
+          "text": "blood vessel endothelial cell",
+          "description": "blood vessel endothelial cell",
+          "meaning": "CL:0000071"
+        },
+        {
+          "text": "cardiac endothelial cell",
+          "description": "cardiac endothelial cell",
+          "meaning": "CL:0010008"
+        }
+      ]
+    },
+    {
+      "name": "Sex_enum",
+      "definition_uri": "https://w3id.org/asctbSexEnum",
+      "from_schema": "https://w3id.org/asctb",
+      "permissible_values": [
+        {
+          "text": "female",
+          "description": "female organism",
+          "meaning": "UBERON:0003100"
+        },
+        {
+          "text": "male",
+          "description": "male organism",
+          "meaning": "UBERON:0003101"
+        }
+      ]
+    },
+    {
+      "name": "VesselType_enum",
+      "definition_uri": "https://w3id.org/asctbVesselTypeEnum",
+      "from_schema": "https://w3id.org/asctb",
+      "permissible_values": [
+        {
+          "text": "arteriole",
+          "description": "arteriole",
+          "meaning": "UBERON:0001980"
+        },
+        {
+          "text": "artery",
+          "description": "artery",
+          "meaning": "UBERON:0001637"
+        },
+        {
+          "text": "capillary",
+          "description": "capillary",
+          "meaning": "UBERON:0001982"
+        },
+        {
+          "text": "heart chamber",
+          "description": "heart",
+          "meaning": "UBERON:0000948"
+        },
+        {
+          "text": "sinus",
+          "description": "sinus"
+        },
+        {
+          "text": "sinusoid",
+          "description": "sinusoid",
+          "meaning": "UBERON:0003909"
+        },
+        {
+          "text": "vein",
+          "description": "vein",
+          "meaning": "UBERON:0001638"
+        },
+        {
+          "text": "venule",
+          "description": "venule",
+          "meaning": "UBERON:0001979"
+        }
+      ]
+    },
+    {
+      "name": "IsVirtualMergedVessel",
+      "definition_uri": "https://w3id.org/asctbIsVirtualMergedVessel",
+      "from_schema": "https://w3id.org/asctb",
+      "permissible_values": [
+        {
+          "text": "0",
+          "description": "is NOT virtual merged vessel used to show the branches of other vessels."
+        },
+        {
+          "text": "1",
+          "description": "is virtual merged vessel used to show the branches of other vessels."
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "name": "BranchesFrom",
+      "definition_uri": "https://w3id.org/asctbBranchesFrom",
+      "description": "The 'parent' vessel that is one step closer to the heart. For veins it is 'drains to' rather than branches from.",
+      "examples": [
+        {
+          "value": "truncus anterior of right pulmonary artery",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbBranchesFrom",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Vessel",
+      "definition_uri": "https://w3id.org/asctbVessel",
+      "mappings": [
+        "http://schema.org/identifier"
+      ],
+      "description": "The name of the blood vessel. The unique item (primary key) in this table.",
+      "examples": [
+        {
+          "value": "apical segmental artery of right lung",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "http://schema.org/identifier",
+      "identifier": true,
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "VesselType",
+      "definition_uri": "https://w3id.org/asctbVesselType",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+      ],
+      "description": "Either heart chamber, artery, arteriole, capillary, venule, vein, sinusoid, or sinus.",
+      "examples": [
+        {
+          "value": "artery",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "VesselType_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "BodyPart",
+      "definition_uri": "https://w3id.org/asctbBodyPart",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/BFO_0000050"
+      ],
+      "description": "A mapping from vessel to organ or part of the body.",
+      "examples": [
+        {
+          "value": "lung",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "http://purl.obolibrary.org/obo/BFO_0000050",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Sex",
+      "definition_uri": "https://w3id.org/asctbSex",
+      "mappings": [
+        "http://schema.org/gender"
+      ],
+      "description": "Indicates whether the vessel is only found in males or females.",
+      "examples": [
+        {
+          "value": "male",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "http://schema.org/gender",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Sex_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Anastomoses",
+      "definition_uri": "https://w3id.org/asctbAnastomoses",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002378"
+      ],
+      "description": "Indicates whether the vessel anastomoses with another vessel.",
+      "examples": [
+        {
+          "value": "anterior jugular vein (other side)",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0002378",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ForBranchesSee",
+      "definition_uri": "https://w3id.org/asctbForBranchesSee",
+      "description": "For some vessels, like the left and right renal arteries, rather than showing all the branches of both arteries, a \"virtual\" merged vessel is created (e.g., just \"renal artery\"). The branches are only added once to that virtual vessel. This field indicates the name of the virtual vessel that has the branches.",
+      "examples": [
+        {
+          "value": "segmental pulmonary artery",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbForBranchesSee",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "MergedVessel",
+      "definition_uri": "https://w3id.org/asctbMergedVessel",
+      "description": "This field contains a \"1\" if it is virtual merged vessel used to show the branches of other vessels.",
+      "examples": [
+        {
+          "value": "0",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbMergedVessel",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "IsVirtualMergedVessel",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CoordX",
+      "definition_uri": "https://w3id.org/asctbCoordX",
+      "description": "The X coordinate for the approximate location of selected vessels. This is more to show relative position (left vs right) rather than the exact location.",
+      "examples": [
+        {
+          "value": "-10",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbCoordX",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "CoordinateType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CoordY",
+      "definition_uri": "https://w3id.org/asctbCoordY",
+      "description": "The Y coordinate for the approximate location of selected vessels. This is more to show relative position (above vs below) rather than the exact location.",
+      "examples": [
+        {
+          "value": "-40",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbCoordY",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "CoordinateType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "BranchSequence",
+      "definition_uri": "https://w3id.org/asctbBranchSequence",
+      "description": "The order in which vessels branch off of the BranchesFrom vessel. Vessels can have the same value if they branch off the BranchesFrom vessel at the same place. A value of 999 means the branching sequence will be added in a future version of this table.",
+      "examples": [
+        {
+          "value": "999",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbBranchSequence",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CellType",
+      "definition_uri": "https://w3id.org/asctbCellType",
+      "description": "A type of cell associated with the vessel.",
+      "examples": [
+        {
+          "value": "blood vessel endothelial cell",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbCellType",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "CellType_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CellTypeLabel",
+      "definition_uri": "https://w3id.org/asctbCellTypeLabel",
+      "description": "The preferred name of the cell in Cell Ontology.",
+      "examples": [
+        {
+          "value": "blood vessel endothelial cell",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbCellTypeLabel",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "CellTypeLabel_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CellTypeID",
+      "definition_uri": "https://w3id.org/asctbCellTypeID",
+      "description": "The cell type ID in Cell Ontology.",
+      "examples": [
+        {
+          "value": "CL:0000071",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbCellTypeID",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "CL_identifier",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biomarkers",
+      "definition_uri": "https://w3id.org/asctbBiomarkers",
+      "description": "A biomarker associated with the vessel.",
+      "examples": [
+        {
+          "value": "PECAM1 (CD31)",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbBiomarkers",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "BiomarkersLabel",
+      "definition_uri": "https://w3id.org/asctbBiomarkersLabel",
+      "description": "The preferred name of the biomarker in HUGO Gene Nomenclature Committee (HGNC)",
+      "examples": [
+        {
+          "value": "PECAM1",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbBiomarkersLabel",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "BiomarkersID",
+      "definition_uri": "https://w3id.org/asctbBiomarkersID",
+      "description": "The ID of the biomarker in HUGO Gene Nomenclature Committee (HGNC)",
+      "examples": [
+        {
+          "value": "HGNC:8823",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbBiomarkersID",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "HGNC_identifier",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ReferenceURL",
+      "definition_uri": "https://w3id.org/asctbReferenceURL",
+      "description": "The website describing the vessel and where it branches from.",
+      "examples": [
+        {
+          "value": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6039811/",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbReferenceURL",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "uri",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Reference",
+      "definition_uri": "https://w3id.org/asctbReference",
+      "description": "A reference for the website. For example, if the ReferenceURL is a journal article, then this field is the reference (authors, title, journal, etc.) of the article.",
+      "examples": [
+        {
+          "value": "Kandathil A, Chamarthy M. Pulmonary vascular anatomy & anatomical variants. Cardiovasc Diagn Ther. 2018 Jun;8(3):201-207.",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbReference",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ReferenceDOI",
+      "definition_uri": "https://w3id.org/asctbReferenceDOI",
+      "description": "The DOI of the reference if applicable.",
+      "examples": [
+        {
+          "value": "10.21037/cdt.2018.01.04",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbReferenceDOI",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "DOI",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "UBERON",
+      "definition_uri": "https://w3id.org/asctbUBERON",
+      "description": "The ID of the vessel in the UBERON ontology.",
+      "examples": [
+        {
+          "value": "UBERON:0001651",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbUBERON",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "UBERON_identifier",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FMA",
+      "definition_uri": "https://w3id.org/asctbFMA",
+      "description": "The ID of the vessel in the FMA ontology.",
+      "examples": [
+        {
+          "value": "fma8617",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbFMA",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "FMA_identifier",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "BodyPartUberon",
+      "definition_uri": "https://w3id.org/asctbBodyPartUberon",
+      "description": "The UBERON ID of the BodyPart.",
+      "examples": [
+        {
+          "value": "UBERON:0002048",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbBodyPartUberon",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "UBERON_identifier",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "UBERONLabel",
+      "definition_uri": "https://w3id.org/asctbUBERONLabel",
+      "description": "The preferred name of the vessel in UBERON.",
+      "examples": [
+        {
+          "value": "right pulmonary artery",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbUBERONLabel",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "FMALabel",
+      "definition_uri": "https://w3id.org/asctbFMALabel",
+      "description": "The preferred name of the vessel in FMA.",
+      "examples": [
+        {
+          "value": "Right apical segmental artery",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbFMALabel",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PathFromHeart",
+      "definition_uri": "https://w3id.org/asctbPathFromHeart",
+      "description": "The list of branches leading from a heart chamber to the vessel.",
+      "examples": [
+        {
+          "value": "right ventricle;pulmonary trunk;right pulmonary artery;truncus anterior of right pulmonary artery;apical segmental artery of right lung",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/asctb",
+      "slot_uri": "https://w3id.org/asctbPathFromHeart",
+      "owner": "VesselClass",
+      "domain_of": [
+        "VesselClass"
+      ],
+      "range": "Anatomical_label",
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "VesselClass",
+      "definition_uri": "https://w3id.org/asctbVesselClass",
+      "from_schema": "https://w3id.org/asctb",
+      "slots": [
+        "BranchesFrom",
+        "Vessel",
+        "VesselType",
+        "BodyPart",
+        "Sex",
+        "Anastomoses",
+        "ForBranchesSee",
+        "MergedVessel",
+        "CoordX",
+        "CoordY",
+        "BranchSequence",
+        "CellType",
+        "CellTypeLabel",
+        "CellTypeID",
+        "Biomarkers",
+        "BiomarkersLabel",
+        "BiomarkersID",
+        "ReferenceURL",
+        "Reference",
+        "ReferenceDOI",
+        "UBERON",
+        "FMA",
+        "BodyPartUberon",
+        "UBERONLabel",
+        "FMALabel",
+        "PathFromHeart"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/asctbVesselClass",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "asctb.yaml",
+  "source_file_date": "2021-12-15T12:57:49",
+  "source_file_size": 8120,
+  "generation_date": "2021-12-15T12:57:53",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "asctb/jsonld/asctb.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "https://w3id.org/asctb"
+    }
+  ]
+}

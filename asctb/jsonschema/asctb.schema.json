@@ -1,0 +1,177 @@
+{
+   "$defs": {
+      "CellTypeEnum": {
+         "description": "",
+         "enum": [
+            "blood vessel endothelial cell",
+            "cardiac endothelial cell"
+         ],
+         "title": "CellTypeEnum",
+         "type": "string"
+      },
+      "CellTypeLabelEnum": {
+         "description": "",
+         "enum": [
+            "blood vessel endothelial cell",
+            "cardiac endothelial cell"
+         ],
+         "title": "CellTypeLabelEnum",
+         "type": "string"
+      },
+      "IsVirtualMergedVessel": {
+         "description": "",
+         "enum": [
+            "0",
+            "1"
+         ],
+         "title": "IsVirtualMergedVessel",
+         "type": "string"
+      },
+      "SexEnum": {
+         "description": "",
+         "enum": [
+            "female",
+            "male"
+         ],
+         "title": "SexEnum",
+         "type": "string"
+      },
+      "VesselClass": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "Anastomoses": {
+               "description": "Indicates whether the vessel anastomoses with another vessel.",
+               "type": "string"
+            },
+            "Biomarkers": {
+               "description": "A biomarker associated with the vessel.",
+               "type": "string"
+            },
+            "BiomarkersID": {
+               "description": "The ID of the biomarker in HUGO Gene Nomenclature Committee (HGNC)",
+               "type": "string"
+            },
+            "BiomarkersLabel": {
+               "description": "The preferred name of the biomarker in HUGO Gene Nomenclature Committee (HGNC)",
+               "type": "string"
+            },
+            "BodyPart": {
+               "description": "A mapping from vessel to organ or part of the body.",
+               "type": "string"
+            },
+            "BodyPartUberon": {
+               "description": "The UBERON ID of the BodyPart.",
+               "type": "string"
+            },
+            "BranchSequence": {
+               "description": "The order in which vessels branch off of the BranchesFrom vessel. Vessels can have the same value if they branch off the BranchesFrom vessel at the same place. A value of 999 means the branching sequence will be added in a future version of this table.",
+               "type": "integer"
+            },
+            "BranchesFrom": {
+               "description": "The 'parent' vessel that is one step closer to the heart. For veins it is 'drains to' rather than branches from.",
+               "type": "string"
+            },
+            "CellType": {
+               "$ref": "#/$defs/CellTypeEnum",
+               "description": "A type of cell associated with the vessel."
+            },
+            "CellTypeID": {
+               "description": "The cell type ID in Cell Ontology.",
+               "type": "string"
+            },
+            "CellTypeLabel": {
+               "$ref": "#/$defs/CellTypeLabelEnum",
+               "description": "The preferred name of the cell in Cell Ontology."
+            },
+            "CoordX": {
+               "description": "The X coordinate for the approximate location of selected vessels. This is more to show relative position (left vs right) rather than the exact location.",
+               "type": "integer"
+            },
+            "CoordY": {
+               "description": "The Y coordinate for the approximate location of selected vessels. This is more to show relative position (above vs below) rather than the exact location.",
+               "type": "integer"
+            },
+            "FMA": {
+               "description": "The ID of the vessel in the FMA ontology.",
+               "type": "string"
+            },
+            "FMALabel": {
+               "description": "The preferred name of the vessel in FMA.",
+               "type": "string"
+            },
+            "ForBranchesSee": {
+               "description": "For some vessels, like the left and right renal arteries, rather than showing all the branches of both arteries, a \"virtual\" merged vessel is created (e.g., just \"renal artery\"). The branches are only added once to that virtual vessel. This field indicates the name of the virtual vessel that has the branches.",
+               "type": "string"
+            },
+            "MergedVessel": {
+               "$ref": "#/$defs/IsVirtualMergedVessel",
+               "description": "This field contains a \"1\" if it is virtual merged vessel used to show the branches of other vessels."
+            },
+            "PathFromHeart": {
+               "description": "The list of branches leading from a heart chamber to the vessel.",
+               "type": "string"
+            },
+            "Reference": {
+               "description": "A reference for the website. For example, if the ReferenceURL is a journal article, then this field is the reference (authors, title, journal, etc.) of the article.",
+               "type": "string"
+            },
+            "ReferenceDOI": {
+               "description": "The DOI of the reference if applicable.",
+               "type": "string"
+            },
+            "ReferenceURL": {
+               "description": "The website describing the vessel and where it branches from.",
+               "type": "string"
+            },
+            "Sex": {
+               "$ref": "#/$defs/SexEnum",
+               "description": "Indicates whether the vessel is only found in males or females."
+            },
+            "UBERON": {
+               "description": "The ID of the vessel in the UBERON ontology.",
+               "type": "string"
+            },
+            "UBERONLabel": {
+               "description": "The preferred name of the vessel in UBERON.",
+               "type": "string"
+            },
+            "Vessel": {
+               "description": "The name of the blood vessel. The unique item (primary key) in this table.",
+               "type": "string"
+            },
+            "VesselType": {
+               "$ref": "#/$defs/VesselTypeEnum",
+               "description": "Either heart chamber, artery, arteriole, capillary, venule, vein, sinusoid, or sinus."
+            }
+         },
+         "required": [
+            "Vessel"
+         ],
+         "title": "VesselClass",
+         "type": "object"
+      },
+      "VesselTypeEnum": {
+         "description": "",
+         "enum": [
+            "arteriole",
+            "artery",
+            "capillary",
+            "heart chamber",
+            "sinus",
+            "sinusoid",
+            "vein",
+            "venule"
+         ],
+         "title": "VesselTypeEnum",
+         "type": "string"
+      }
+   },
+   "$id": "https://w3id.org/asctb",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "properties": {},
+   "required": [],
+   "title": "asctb",
+   "type": "object"
+}

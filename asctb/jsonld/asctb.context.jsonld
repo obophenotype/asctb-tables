@@ -1,0 +1,91 @@
+{
+   "_comments": "Auto generated from asctb.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-12-15T12:57:52\n    Schema: asctb\n    \n    id: https://w3id.org/asctb\n    description: asctb\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "BFO": {
+         "@id": "http://purl.obolibrary.org/obo/BFO_",
+         "@prefix": true
+      },
+      "CL": {
+         "@id": "http://purl.obolibrary.org/obo/CL_",
+         "@prefix": true
+      },
+      "RO": {
+         "@id": "http://purl.obolibrary.org/obo/RO_",
+         "@prefix": true
+      },
+      "UBERON": {
+         "@id": "http://purl.obolibrary.org/obo/UBERON_",
+         "@prefix": true
+      },
+      "asctb": {
+         "@id": "https://w3id.org/asctb",
+         "@prefix": true
+      },
+      "linkml": "https://w3id.org/linkml/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "schema": "http://schema.org/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "@vocab": "https://w3id.org/asctb",
+      "Anastomoses": {
+         "@id": "RO:0002378"
+      },
+      "BodyPart": {
+         "@id": "BFO:0000050"
+      },
+      "BranchSequence": {
+         "@type": "xsd:integer"
+      },
+      "CellType": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "CellTypeLabel": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "CoordX": {
+         "@type": "xsd:integer"
+      },
+      "CoordY": {
+         "@type": "xsd:integer"
+      },
+      "MergedVessel": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "ReferenceURL": {
+         "@type": "@id"
+      },
+      "Sex": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "schema:gender"
+      },
+      "Vessel": "@id",
+      "VesselType": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "rdfs:subClassOf"
+      }
+   }
+}

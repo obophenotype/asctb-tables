@@ -1,0 +1,10 @@
+{
+   "BFO": "http://purl.obolibrary.org/obo/BFO_",
+   "CL": "http://purl.obolibrary.org/obo/CL_",
+   "RO": "http://purl.obolibrary.org/obo/RO_",
+   "UBERON": "http://purl.obolibrary.org/obo/UBERON_",
+   "asctb": "https://w3id.org/asctb",
+   "linkml": "https://w3id.org/linkml/",
+   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "schema": "http://schema.org/"
+}

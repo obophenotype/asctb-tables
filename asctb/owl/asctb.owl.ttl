@@ -1,0 +1,375 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix asctb: <https://w3id.org/asctb> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+asctb: a owl:Ontology ;
+    rdfs:label "asctb" ;
+    IAO:0000700 asctb:VesselClass ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    skos:definition "asctb" ;
+    linkml:generation_date "2021-12-15T12:57:54" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "asctb.yaml" ;
+    linkml:source_file_date "2021-12-15T12:57:49" ;
+    linkml:source_file_size 8120 .
+
+asctb:Identifier a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "identifier" ;
+    rdfs:subClassOf linkml:String .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" ;
+    skos:definition "the name and description of a subset" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+<http://purl.obolibrary.org/obo/BFO_0000050> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "BodyPart" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "A mapping from vessel to organ or part of the body." ;
+    linkml:examples "Example(value='lung', description=None)" .
+
+<http://purl.obolibrary.org/obo/RO_0002378> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "Anastomoses" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "Indicates whether the vessel anastomoses with another vessel." ;
+    linkml:examples "Example(value='anterior jugular vein (other side)', description=None)" .
+
+schema:gender a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "Sex" ;
+    rdfs:range <http://UNKNOWN.org/Sex_enum> ;
+    skos:definition "Indicates whether the vessel is only found in males or females." ;
+    linkml:examples "Example(value='male', description=None)" .
+
+schema:identifier a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "Vessel" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "The name of the blood vessel. The unique item (primary key) in this table." ;
+    linkml:examples "Example(value='apical segmental artery of right lung', description=None)" .
+
+rdfs:subClassOf a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "VesselType" ;
+    rdfs:range <http://UNKNOWN.org/VesselType_enum> ;
+    skos:definition "Either heart chamber, artery, arteriole, capillary, venule, vein, sinusoid, or sinus." ;
+    linkml:examples "Example(value='artery', description=None)" .
+
+asctb:Biomarkers a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "Biomarkers" ;
+    rdfs:range linkml:String ;
+    skos:definition "A biomarker associated with the vessel." ;
+    linkml:examples "Example(value='PECAM1 (CD31)', description=None)" .
+
+asctb:BiomarkersID a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "BiomarkersID" ;
+    rdfs:range asctb:HGNCIdentifier ;
+    skos:definition "The ID of the biomarker in HUGO Gene Nomenclature Committee (HGNC)" ;
+    linkml:examples "Example(value='HGNC:8823', description=None)" .
+
+asctb:BiomarkersLabel a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "BiomarkersLabel" ;
+    rdfs:range linkml:String ;
+    skos:definition "The preferred name of the biomarker in HUGO Gene Nomenclature Committee (HGNC)" ;
+    linkml:examples "Example(value='PECAM1', description=None)" .
+
+asctb:BodyPartUberon a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "BodyPartUberon" ;
+    rdfs:range asctb:UBERONIdentifier ;
+    skos:definition "The UBERON ID of the BodyPart." ;
+    linkml:examples "Example(value='UBERON:0002048', description=None)" .
+
+asctb:BranchSequence a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "BranchSequence" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "The order in which vessels branch off of the BranchesFrom vessel. Vessels can have the same value if they branch off the BranchesFrom vessel at the same place. A value of 999 means the branching sequence will be added in a future version of this table." ;
+    linkml:examples "Example(value='999', description=None)" .
+
+asctb:BranchesFrom a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "BranchesFrom" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "The 'parent' vessel that is one step closer to the heart. For veins it is 'drains to' rather than branches from." ;
+    linkml:examples "Example(value='truncus anterior of right pulmonary artery', description=None)" .
+
+asctb:CellType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "CellType" ;
+    rdfs:range <http://UNKNOWN.org/CellType_enum> ;
+    skos:definition "A type of cell associated with the vessel." ;
+    linkml:examples "Example(value='blood vessel endothelial cell', description=None)" .
+
+asctb:CellTypeID a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "CellTypeID" ;
+    rdfs:range asctb:CLIdentifier ;
+    skos:definition "The cell type ID in Cell Ontology." ;
+    linkml:examples "Example(value='CL:0000071', description=None)" .
+
+asctb:CellTypeLabel a owl:Class,
+        owl:ObjectProperty,
+        linkml:SlotDefinition,
+        linkml:TypeDefinition ;
+    rdfs:label "Cell type label",
+        "CellTypeLabel" ;
+    rdfs:range <http://UNKNOWN.org/CellTypeLabel_enum> ;
+    rdfs:subClassOf linkml:String ;
+    skos:definition "The preferred name of the cell in Cell Ontology." ;
+    linkml:examples "Example(value='blood vessel endothelial cell', description=None)" .
+
+asctb:CoordX a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "CoordX" ;
+    rdfs:range asctb:CoordinateType ;
+    skos:definition "The X coordinate for the approximate location of selected vessels. This is more to show relative position (left vs right) rather than the exact location." ;
+    linkml:examples "Example(value='-10', description=None)" .
+
+asctb:CoordY a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "CoordY" ;
+    rdfs:range asctb:CoordinateType ;
+    skos:definition "The Y coordinate for the approximate location of selected vessels. This is more to show relative position (above vs below) rather than the exact location." ;
+    linkml:examples "Example(value='-40', description=None)" .
+
+asctb:FMA a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "FMA" ;
+    rdfs:range asctb:FMAIdentifier ;
+    skos:definition "The ID of the vessel in the FMA ontology." ;
+    linkml:examples "Example(value='fma8617', description=None)" .
+
+asctb:FMALabel a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "FMALabel" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "The preferred name of the vessel in FMA." ;
+    linkml:examples "Example(value='Right apical segmental artery', description=None)" .
+
+asctb:ForBranchesSee a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ForBranchesSee" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "For some vessels, like the left and right renal arteries, rather than showing all the branches of both arteries, a \"virtual\" merged vessel is created (e.g., just \"renal artery\"). The branches are only added once to that virtual vessel. This field indicates the name of the virtual vessel that has the branches." ;
+    linkml:examples "Example(value='segmental pulmonary artery', description=None)" .
+
+asctb:MergedVessel a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "MergedVessel" ;
+    rdfs:range <http://UNKNOWN.org/IsVirtualMergedVessel> ;
+    skos:definition "This field contains a \"1\" if it is virtual merged vessel used to show the branches of other vessels." ;
+    linkml:examples "Example(value='0', description=None)" .
+
+asctb:PathFromHeart a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "PathFromHeart" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "The list of branches leading from a heart chamber to the vessel." ;
+    linkml:examples "Example(value='right ventricle;pulmonary trunk;right pulmonary artery;truncus anterior of right pulmonary artery;apical segmental artery of right lung', description=None)" .
+
+asctb:Reference a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "Reference" ;
+    rdfs:range linkml:String ;
+    skos:definition "A reference for the website. For example, if the ReferenceURL is a journal article, then this field is the reference (authors, title, journal, etc.) of the article." ;
+    linkml:examples "Example(value='Kandathil A, Chamarthy M. Pulmonary vascular anatomy & anatomical variants. Cardiovasc Diagn Ther. 2018 Jun;8(3):201-207.', description=None)" .
+
+asctb:ReferenceDOI a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ReferenceDOI" ;
+    rdfs:range asctb:DOI ;
+    skos:definition "The DOI of the reference if applicable." ;
+    linkml:examples "Example(value='10.21037/cdt.2018.01.04', description=None)" .
+
+asctb:ReferenceURL a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ReferenceURL" ;
+    rdfs:range linkml:Uri ;
+    skos:definition "The website describing the vessel and where it branches from." ;
+    linkml:examples "Example(value='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6039811/', description=None)" .
+
+asctb:UBERON a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "UBERON" ;
+    rdfs:range asctb:UBERONIdentifier ;
+    skos:definition "The ID of the vessel in the UBERON ontology." ;
+    linkml:examples "Example(value='UBERON:0001651', description=None)" .
+
+asctb:UBERONLabel a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "UBERONLabel" ;
+    rdfs:range asctb:AnatomicalLabel ;
+    skos:definition "The preferred name of the vessel in UBERON." ;
+    linkml:examples "Example(value='right pulmonary artery', description=None)" .
+
+asctb:VesselClass a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "VesselClass" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:DOI ;
+            owl:onProperty asctb:ReferenceDOI ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/CellTypeLabel_enum> ;
+            owl:onProperty asctb:CellTypeLabel ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:CoordinateType ;
+            owl:onProperty asctb:CoordX ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty asctb:Reference ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:CoordinateType ;
+            owl:onProperty asctb:CoordY ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/CellType_enum> ;
+            owl:onProperty asctb:CellType ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/VesselType_enum> ;
+            owl:onProperty rdfs:subClassOf ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty asctb:BranchesFrom ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty asctb:PathFromHeart ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:UBERONIdentifier ;
+            owl:onProperty asctb:BodyPartUberon ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uri ;
+            owl:onProperty asctb:ReferenceURL ],
+        [ a owl:Restriction ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty schema:identifier ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:FMAIdentifier ;
+            owl:onProperty asctb:FMA ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/Sex_enum> ;
+            owl:onProperty schema:gender ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty asctb:BiomarkersLabel ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty asctb:UBERONLabel ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty asctb:Biomarkers ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty asctb:FMALabel ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:CLIdentifier ;
+            owl:onProperty asctb:CellTypeID ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://UNKNOWN.org/IsVirtualMergedVessel> ;
+            owl:onProperty asctb:MergedVessel ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty asctb:ForBranchesSee ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:UBERONIdentifier ;
+            owl:onProperty asctb:UBERON ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty asctb:BranchSequence ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:HGNCIdentifier ;
+            owl:onProperty asctb:BiomarkersID ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass asctb:AnatomicalLabel ;
+            owl:onProperty <http://purl.obolibrary.org/obo/RO_0002378> ] .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" ;
+    skos:definition "the definition of a class or interface" .
+
+asctb:CLIdentifier a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "CL identifier" ;
+    rdfs:subClassOf linkml:String .
+
+asctb:DOI a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "DOI" ;
+    rdfs:subClassOf linkml:String .
+
+asctb:FMAIdentifier a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "FMA identifier" ;
+    rdfs:subClassOf linkml:String .
+
+asctb:HGNCIdentifier a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "HGNC identifier" ;
+    rdfs:subClassOf linkml:String .
+
+asctb:CoordinateType a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "CoordinateType" ;
+    rdfs:subClassOf linkml:Integer .
+
+asctb:UBERONIdentifier a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "UBERON identifier" ;
+    rdfs:subClassOf linkml:String .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" ;
+    skos:definition "A data type definition." .
+
+asctb:AnatomicalLabel a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "Anatomical label" ;
+    rdfs:subClassOf linkml:String .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" ;
+    skos:definition "the definition of a property or a slot" .
+
+

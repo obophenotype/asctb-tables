@@ -1,0 +1,257 @@
+id: https://w3id.org/asctb
+name: asctb
+description: asctb
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  asctb: https://w3id.org/asctb
+  schema: http://schema.org/
+  CL: http://purl.obolibrary.org/obo/CL_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+default_curi_maps:
+  - semweb_context
+  - obo_context
+default_prefix: asctb
+types:
+  CL identifier:
+    typeof: string
+  HGNC identifier:
+    typeof: string
+  identifier:
+    typeof: string
+  UBERON identifier:
+    typeof: string
+  FMA identifier:
+    typeof: string
+  DOI:
+    typeof: string
+  Anatomical label:
+    typeof: string
+  Cell type label:
+    typeof: string
+  CoordinateType:
+    typeof: integer
+classes:
+  VesselClass:
+    slots:
+    - BranchesFrom
+    - Vessel
+    - VesselType
+    - BodyPart
+    - Sex
+    - Anastomoses
+    - ForBranchesSee
+    - MergedVessel
+    - CoordX
+    - CoordY
+    - BranchSequence
+    - CellType
+    - CellTypeLabel
+    - CellTypeID
+    - Biomarkers
+    - BiomarkersLabel
+    - BiomarkersID
+    - ReferenceURL
+    - Reference
+    - ReferenceDOI
+    - UBERON
+    - FMA
+    - BodyPartUberon
+    - UBERONLabel
+    - FMALabel
+    - PathFromHeart
+    slot_usage: {}
+slots:
+  BranchesFrom:
+    description: The 'parent' vessel that is one step closer to the heart. For veins it is 'drains to' rather than branches from.
+    range: Anatomical label
+    examples:
+    - value: truncus anterior of right pulmonary artery
+  Vessel:
+    range: Anatomical label
+    description: The name of the blood vessel. The unique item (primary key) in this table.
+    identifier: true
+    slot_uri: schema:identifier
+    examples:
+    - value: apical segmental artery of right lung
+  VesselType:
+    range: VesselType_enum
+    description: Either heart chamber, artery, arteriole, capillary, venule, vein, sinusoid, or sinus.
+    slot_uri: rdfs:subClassOf
+    examples:
+    - value: artery
+  BodyPart:
+    range: Anatomical label
+    description: A mapping from vessel to organ or part of the body.
+    slot_uri: BFO:0000050
+    examples:
+    - value: lung
+  Sex:
+    range: Sex_enum
+    description: Indicates whether the vessel is only found in males or females.
+    slot_uri: schema:gender
+    examples:
+    - value: male
+  Anastomoses:
+    range: Anatomical label
+    description: Indicates whether the vessel anastomoses with another vessel.
+    examples:
+    - value: anterior jugular vein (other side)
+    slot_uri: RO:0002378
+  ForBranchesSee:
+    range: Anatomical label
+    description: For some vessels, like the left and right renal arteries, rather than showing all the branches of both arteries, a "virtual" merged vessel is created (e.g., just "renal artery"). The branches are only added once to that virtual vessel. This field indicates the name of the virtual vessel that has the branches. 
+    examples:
+    - value: segmental pulmonary artery
+  MergedVessel:
+    range: IsVirtualMergedVessel
+    description: This field contains a "1" if it is virtual merged vessel used to show the branches of other vessels. 
+    examples:
+    - value: '0'
+  CoordX:
+    range: CoordinateType
+    description: The X coordinate for the approximate location of selected vessels. This is more to show relative position (left vs right) rather than the exact location.
+    examples:
+    - value: '-10'
+  CoordY:
+    range: CoordinateType
+    description: The Y coordinate for the approximate location of selected vessels. This is more to show relative position (above vs below) rather than the exact location. 
+    examples:
+    - value: '-40'
+  BranchSequence:
+    range: integer
+    description: The order in which vessels branch off of the BranchesFrom vessel. Vessels can have the same value if they branch off the BranchesFrom vessel at the same place. A value of 999 means the branching sequence will be added in a future version of this table. 
+    examples:
+    - value: '999'
+  CellType:
+    range: CellType_enum
+    description: A type of cell associated with the vessel. 
+    examples:
+    - value: blood vessel endothelial cell
+  CellTypeLabel:
+    range: CellTypeLabel_enum
+    description: The preferred name of the cell in Cell Ontology. 
+    examples:
+    - value: blood vessel endothelial cell
+  CellTypeID:
+    range: CL identifier
+    description: The cell type ID in Cell Ontology. 
+    examples:
+    - value: CL:0000071
+  Biomarkers:
+#    range: Biomarkers_enum
+    description: A biomarker associated with the vessel. 
+    examples:
+    - value: PECAM1 (CD31)
+  BiomarkersLabel:
+#    range: BiomarkersLabel_enum
+    description: The preferred name of the biomarker in HUGO Gene Nomenclature Committee (HGNC) 
+    examples:
+    - value: PECAM1
+  BiomarkersID:
+    range: HGNC identifier
+    description: The ID of the biomarker in HUGO Gene Nomenclature Committee (HGNC) 
+    examples:
+    - value: HGNC:8823
+  ReferenceURL:
+    range: uri
+    description: The website describing the vessel and where it branches from. 
+    examples:
+    - value: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6039811/
+  Reference:
+    range: string
+    description: A reference for the website. For example, if the ReferenceURL is a journal article, then this field is the reference (authors, title, journal, etc.) of the article. 
+    examples:
+    - value: Kandathil A, Chamarthy M. Pulmonary vascular anatomy & anatomical variants.
+        Cardiovasc Diagn Ther. 2018 Jun;8(3):201-207.
+  ReferenceDOI:
+    range: DOI
+    description: The DOI of the reference if applicable. 
+    examples:
+    - value: 10.21037/cdt.2018.01.04
+  UBERON:
+    range: UBERON identifier
+    description: The ID of the vessel in the UBERON ontology. 
+    examples:
+    - value: UBERON:0001651
+  FMA:
+    range: FMA identifier
+    description: The ID of the vessel in the FMA ontology. 
+    examples:
+    - value: fma8617
+  BodyPartUberon:
+    range: UBERON identifier
+    description: The UBERON ID of the BodyPart. 
+    examples:
+    - value: UBERON:0002048
+  UBERONLabel:
+    range: Anatomical label
+    description: The preferred name of the vessel in UBERON. 
+    examples:
+    - value: right pulmonary artery
+  FMALabel:
+    range: Anatomical label
+    description: The preferred name of the vessel in FMA. 
+    examples:
+    - value: Right apical segmental artery
+  PathFromHeart:
+    range: Anatomical label
+    description: The list of branches leading from a heart chamber to the vessel. 
+    examples:
+    - value: right ventricle;pulmonary trunk;right pulmonary artery;truncus anterior
+        of right pulmonary artery;apical segmental artery of right lung
+enums:
+  CellTypeLabel_enum:
+    permissible_values:
+      blood vessel endothelial cell:
+        description: blood vessel endothelial cell
+        meaning: CL:0000071
+      cardiac endothelial cell:
+        description: cardiac endothelial cell
+        meaning: CL:0010008
+  CellType_enum:
+    permissible_values:
+      blood vessel endothelial cell:
+        description: blood vessel endothelial cell
+        meaning: CL:0000071
+      cardiac endothelial cell:
+        description: cardiac endothelial cell
+        meaning: CL:0010008
+  Sex_enum:
+    permissible_values:
+      female:
+        description: female organism
+        meaning: UBERON:0003100
+      male:
+        description: male organism
+        meaning: UBERON:0003101
+  VesselType_enum:
+    permissible_values:
+      arteriole:
+        description: arteriole
+        meaning: UBERON:0001980
+      artery:
+        description: artery
+        meaning: UBERON:0001637
+      capillary:
+        description: capillary
+        meaning: UBERON:0001982
+      heart chamber:
+        description: heart
+        meaning: UBERON:0000948
+      sinus:
+        description: sinus
+      sinusoid:
+        description: sinusoid
+        meaning: UBERON:0003909
+      vein:
+        description: vein
+        meaning: UBERON:0001638
+      venule:
+        description: venule
+        meaning: UBERON:0001979
+  IsVirtualMergedVessel:
+    permissible_values:
+      "0": is NOT virtual merged vessel used to show the branches of other vessels. 
+      "1": is virtual merged vessel used to show the branches of other vessels. 

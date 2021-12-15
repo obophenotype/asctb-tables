@@ -1,0 +1,87 @@
+BASE <https://w3id.org/asctb/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX schema: <http://schema.org/>
+
+
+<https://w3id.org/asctbCLIdentifier> xsd:string
+
+<https://w3id.org/asctbHGNCIdentifier> xsd:string
+
+<https://w3id.org/asctbIdentifier> xsd:string
+
+<https://w3id.org/asctbUBERONIdentifier> xsd:string
+
+<https://w3id.org/asctbFMAIdentifier> xsd:string
+
+<https://w3id.org/asctbDOI> xsd:string
+
+<https://w3id.org/asctbAnatomicalLabel> xsd:string
+
+<https://w3id.org/asctbCellTypeLabel> xsd:string
+
+<https://w3id.org/asctbCoordinateType> xsd:integer
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+<https://w3id.org/asctbVesselClass> CLOSED {
+    (  $<https://w3id.org/asctbVesselClass_tes> (  <https://w3id.org/asctbBranchesFrom> @<https://w3id.org/asctbAnatomicalLabel> ?
+          ;
+          rdfs:subClassOf @<https://w3id.org/asctbVesselTypeEnum> ? ;
+          <http://purl.obolibrary.org/obo/BFO_0000050> @<https://w3id.org/asctbAnatomicalLabel> ? ;
+          schema:gender @<https://w3id.org/asctbSexEnum> ? ;
+          <http://purl.obolibrary.org/obo/RO_0002378> @<https://w3id.org/asctbAnatomicalLabel> ? ;
+          <https://w3id.org/asctbForBranchesSee> @<https://w3id.org/asctbAnatomicalLabel> ? ;
+          <https://w3id.org/asctbMergedVessel> @<https://w3id.org/asctbIsVirtualMergedVessel> ? ;
+          <https://w3id.org/asctbCoordX> @<https://w3id.org/asctbCoordinateType> ? ;
+          <https://w3id.org/asctbCoordY> @<https://w3id.org/asctbCoordinateType> ? ;
+          <https://w3id.org/asctbBranchSequence> @linkml:Integer ? ;
+          <https://w3id.org/asctbCellType> @<https://w3id.org/asctbCellTypeEnum> ? ;
+          <https://w3id.org/asctbCellTypeLabel> @<https://w3id.org/asctbCellTypeLabelEnum> ? ;
+          <https://w3id.org/asctbCellTypeID> @<https://w3id.org/asctbCLIdentifier> ? ;
+          <https://w3id.org/asctbBiomarkers> @linkml:String ? ;
+          <https://w3id.org/asctbBiomarkersLabel> @linkml:String ? ;
+          <https://w3id.org/asctbBiomarkersID> @<https://w3id.org/asctbHGNCIdentifier> ? ;
+          <https://w3id.org/asctbReferenceURL> @linkml:Uri ? ;
+          <https://w3id.org/asctbReference> @linkml:String ? ;
+          <https://w3id.org/asctbReferenceDOI> @<https://w3id.org/asctbDOI> ? ;
+          <https://w3id.org/asctbUBERON> @<https://w3id.org/asctbUBERONIdentifier> ? ;
+          <https://w3id.org/asctbFMA> @<https://w3id.org/asctbFMAIdentifier> ? ;
+          <https://w3id.org/asctbBodyPartUberon> @<https://w3id.org/asctbUBERONIdentifier> ? ;
+          <https://w3id.org/asctbUBERONLabel> @<https://w3id.org/asctbAnatomicalLabel> ? ;
+          <https://w3id.org/asctbFMALabel> @<https://w3id.org/asctbAnatomicalLabel> ? ;
+          <https://w3id.org/asctbPathFromHeart> @<https://w3id.org/asctbAnatomicalLabel> ?
+       ) ;
+       rdf:type [ <https://w3id.org/asctbVesselClass> ]
+    )
+}
+
+
